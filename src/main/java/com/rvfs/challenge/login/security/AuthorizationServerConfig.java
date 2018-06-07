@@ -97,20 +97,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return new JwtTokenStore(accessTokenConverter());
     }
 
-    /*@Autowired
-    private SecretKeyProvider keyProvider;*/
-
-    /*@Bean
-    public JwtAccessTokenConverter accessTokenConverter() {
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        try {
-            converter.setSigningKey(keyProvider.getKey());
-        } catch (URISyntaxException | KeyStoreException | NoSuchAlgorithmException | IOException | UnrecoverableKeyException | CertificateException e) {
-            e.printStackTrace();
-        }
-
-        return converter;
-    }*/
+    /**
+     * Access token converter
+     *
+     * @return access token created from keystore.
+     */
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
         KeyStoreKeyFactory keyStoreKeyFactory =
