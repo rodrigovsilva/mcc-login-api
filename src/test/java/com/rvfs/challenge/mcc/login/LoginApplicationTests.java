@@ -1,4 +1,4 @@
-package com.rvfs.challenge.login;
+package com.rvfs.challenge.mcc.login;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
